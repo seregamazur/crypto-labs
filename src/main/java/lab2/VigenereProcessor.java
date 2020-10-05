@@ -1,11 +1,13 @@
 package lab2;
 
+import lab2.model.CycledKey;
 import lab2.model.LineToProcess;
+import lab2.model.Operation;
 import lab2.model.dto.LineToProcessDto;
 import lab2.strategy.VigenereDecryptedLine;
 import lab2.strategy.VigenereEncyptedLine;
 
-import static lab2.Operation.ENCRYPT;
+import static lab2.model.Operation.ENCRYPT;
 
 public class VigenereProcessor {
 

@@ -2,6 +2,7 @@ package lab2;
 
 import java.util.Scanner;
 
+import lab2.model.Operation;
 import lab2.model.dto.LineToProcessDto;
 
 public class Dispatcher {

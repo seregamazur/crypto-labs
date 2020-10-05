@@ -1,7 +1,5 @@
 package lab2.model;
 
-import lab2.CycledKey;
-
 public class LineToProcess {
 
     private final String line;
