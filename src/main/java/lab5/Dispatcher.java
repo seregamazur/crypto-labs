@@ -15,12 +15,12 @@ public class Dispatcher {
     private final BigInteger phi;
 
     Dispatcher(int length) {
-        this.p = BigInteger.probablePrime(length, RANDOM);
-        this.q = BigInteger.probablePrime(length, RANDOM);
+        this.p = new BigInteger("43");
+        this.q = new BigInteger("127");
         this.n = p.multiply(q);
         this.phi = (p.subtract(BigInteger.ONE)).multiply(q.subtract(BigInteger.ONE));
 
-        this.publicKey = getPublicKey(length);
+        this.publicKey = new BigInteger("5");
         this.privateKey = publicKey.modInverse(phi);
     }
 
@@ -43,11 +43,11 @@ public class Dispatcher {
     }
 
     public static void main(String[] args) {
-        int number = RANDOM.nextInt(127) + 2;
+        int number = RANDOM.nextInt(30);
         Dispatcher dispatcher = new Dispatcher(number);
         System.out.println(dispatcher);
 
-        BigInteger message = new BigInteger("18");
+        BigInteger message = new BigInteger("2020");
 
         BigInteger encrypt = dispatcher.encrypt(message);
         BigInteger decrypt = dispatcher.decrypt(encrypt);
@@ -64,3 +64,13 @@ public class Dispatcher {
         return publicKey;
     }
 }
+
+//p=43
+//    q=127
+//    n=5461
+//    privateKey=2117
+//    publicKey=5
+//
+//    Message = 2020
+//    Encrypted message = 3009
+//    Decrypted message = 2020
